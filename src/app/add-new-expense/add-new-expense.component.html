@@ -6,9 +6,11 @@
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Category</mat-label>
-    <input matInput placeholder="Not Selected" formControlName="categoryForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Select Category</mat-label>
+    <mat-select formControlName="categoryForm">
+      <mat-option *ngFor="let category of categories" [value]="category">{{category.categoryName}}</mat-option>
+    </mat-select>
   </mat-form-field>
 
   <mat-form-field class="example-full-width">

@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppComponent } from '../app.component';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-add-new-expense',
@@ -15,7 +16,9 @@ export class AddNewExpenseComponent implements OnInit {
     noteForm: new FormControl(''),
   });
   @Output() newExpenseEvent = new EventEmitter<string>();
-  constructor(private router: Router, private appComponent: AppComponent) { }
+
+  categories = this.sharedService.getCategoriesData();
+  constructor(private router: Router, private appComponent: AppComponent, private sharedService: SharedService) { }
 
   ngOnInit(): void {
   }

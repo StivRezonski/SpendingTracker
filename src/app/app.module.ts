@@ -16,10 +16,12 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AddNewIncomeComponent } from './add-new-income/add-new-income.component';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddNewExpenseComponent } from './add-new-expense/add-new-expense.component';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { AddNewExpenseComponent } from './add-new-expense/add-new-expense.compon
     BrowserAnimationsModule,
     RouterModule.forRoot([]),
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatOptionModule,
+    MatSelectModule
 
   ],
   providers: [],

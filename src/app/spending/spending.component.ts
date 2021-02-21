@@ -15,6 +15,7 @@ export class SpendingComponent implements OnInit {
   balanceValue: number;
   @Input() income: number;
   @Input() expense: number;
+  @Input() category: string;
 
   constructor(private router: Router, private appComponent: AppComponent) {
   }
