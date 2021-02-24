@@ -16,6 +16,9 @@ export class SpendingComponent implements OnInit {
   @Input() income: number;
   @Input() expense: number;
   @Input() category: string;
+  plusBalance = 'green';
+  minusBalance =  'red';
+
 
   constructor(private router: Router, private appComponent: AppComponent) {
   }
@@ -26,10 +29,7 @@ export class SpendingComponent implements OnInit {
     } else {
       this.balanceValue = this.income - this.expense;
     }
-
-  }
-
-
+    }
   insertNewIncome(): void {
     this.appComponent.navBar = false;
     this.appComponent.newIncome = true;
@@ -41,4 +41,9 @@ export class SpendingComponent implements OnInit {
     this.appComponent.newExpense = true;
     this.router.navigate(['/add-new-expense']);
   }
-}
+
+  }
+
+
+
+

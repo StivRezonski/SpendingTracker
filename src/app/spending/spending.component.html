@@ -1,19 +1,31 @@
-<div class="income">Income {{income}} $
-</div>
+<!--<div class="income">-->
+<!--  <span class="material-icons md-18">attach_money</span>Income {{income}} $-->
+<!--</div>-->
 
-<div class="expense">Expense {{expense}} $
-</div>
-<div class="expense">Category {{category}}
-</div>
+<!--<div class="expense">-->
+<!--  <span class="material-icons md-18">money</span>Expense {{expense}} $-->
+<!--</div>-->
+<!--<div class="expense">-->
+<!--  <span class="material-icons md-18">category</span>-->
+<!--  Category {{category}}-->
+<!--</div>-->
+<mat-list role="list">
+  <mat-list-item role="listitem"><span class="material-icons md-18">attach_money</span>Income {{income}} $</mat-list-item>
+  <mat-list-item role="listitem"><span class="material-icons md-18">money</span>Expense {{expense}} $</mat-list-item>
+  <mat-list-item role="listitem"><span class="material-icons md-18">category</span>Category {{category}}</mat-list-item>
+</mat-list>
 <mat-divider></mat-divider>
-<div class="balance">Balance {{balanceValue}} $</div>
+<div class="balance" [style.color]="income > expense ? plusBalance : minusBalance">
+  <span class="material-icons md-18">paid</span>
+  Balance {{balanceValue}} $</div>
 
 <br>
 
-  <div class="button-row">
-    <button mat-raised-button color="primary" class="income-button btn-space" (click)="insertNewIncome()">Add income</button>
-      <button mat-raised-button color="warn" class="btn-space" (click)="insertNewExpense()">Add expense</button>
-    <br>
+<div class="button-row">
+  <button mat-raised-button color="primary" class="income-button btn-space" (click)="insertNewIncome()">Add income
+  </button>
+  <button mat-raised-button color="warn" class="btn-space" (click)="insertNewExpense()">Add expense</button>
+  <br>
 </div>
 
 

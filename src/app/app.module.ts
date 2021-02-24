@@ -20,8 +20,8 @@ import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddNewExpenseComponent } from './add-new-expense/add-new-expense.component';
-import {MatSelectModule} from '@angular/material/select';
-
+import { MatSelectModule } from '@angular/material/select';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -48,7 +48,8 @@ import {MatSelectModule} from '@angular/material/select';
     AppRoutingModule,
     ReactiveFormsModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatListModule
 
   ],
   providers: [],
