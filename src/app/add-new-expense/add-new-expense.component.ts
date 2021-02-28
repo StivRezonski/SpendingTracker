@@ -16,9 +16,11 @@ export class AddNewExpenseComponent implements OnInit {
     noteForm: new FormControl(''),
   });
   @Output() newExpenseEvent = new EventEmitter<string>();
-
+  @Output() newSelectedCategory = new EventEmitter<string>();
   categories = this.sharedService.getCategoriesData();
-  constructor(private router: Router, private appComponent: AppComponent, private sharedService: SharedService) { }
+
+  constructor(private router: Router, private appComponent: AppComponent, private sharedService: SharedService) {
+  }
 
   ngOnInit(): void {
   }
@@ -26,13 +28,18 @@ export class AddNewExpenseComponent implements OnInit {
   onSubmit(): void {
     console.log(this.expenseFormGroup.value);
     const newExpense = this.expenseFormGroup.get('amountForm').value;
+    const selectedCategory = this.expenseFormGroup.get('categoryForm').value;
     this.router.navigateByUrl('/spending');
+    this.addSelectedCategory(selectedCategory);
   }
 
-  addNewExpense(value: string): void{
+  addNewExpense(value: string): void {
     this.onSubmit();
     this.newExpenseEvent.emit(value);
     this.appComponent.navBar = true;
     this.appComponent.newExpense = false;
+  }
+  addSelectedCategory(value: string): void{
+    this.newSelectedCategory.emit(value);
   }
 }

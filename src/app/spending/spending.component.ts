@@ -10,12 +10,13 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./spending.component.css']
 })
 export class SpendingComponent implements OnInit {
-  incomeValue: number;
-  expenseValue: number;
+
   balanceValue: number;
   @Input() income: number;
   @Input() expense: number;
-  @Input() category: string;
+  @Input() incomeCategory: string;
+  @Input() expenseCategory: string;
+  @Input() expenses;
   plusBalance = 'green';
   minusBalance =  'red';
 

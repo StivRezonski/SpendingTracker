@@ -1,9 +1,18 @@
 <mat-tab-group mat-align-tabs="center" *ngIf="navBar">
 
-  <mat-tab label="Spending"><app-spending [income]="currentIncome" [expense]="currentExpense" [category]="currentCategory"></app-spending></mat-tab>
-  <mat-tab label="Transactions"><app-transactions></app-transactions></mat-tab>
-  <mat-tab label="Categories"><app-categories></app-categories></mat-tab>
-<!--  <mat-tab label="Home" routerLink="/add-new-income">Home</mat-tab>-->
+  <mat-tab label="Spending">
+    <app-spending [income]="currentIncome" [expense]="currentExpense" [expenses]="expensesCategories" [incomeCategory]="currentIncomeCategory"
+                  [expenseCategory]="currentExpenseCategory"></app-spending>
+  </mat-tab>
+  <mat-tab label="Transactions">
+    <app-transactions></app-transactions>
+  </mat-tab>
+  <mat-tab label="Categories">
+    <app-categories></app-categories>
+  </mat-tab>
+  <!--  <mat-tab label="Home" routerLink="/add-new-income">Home</mat-tab>-->
 </mat-tab-group>
-<app-add-new-income *ngIf="newIncome" (newIncomeEvent)="addNewIncome($event)" (newSelectedCategory)="addNewCategory($event)"></app-add-new-income>
-<app-add-new-expense *ngIf="newExpense" (newExpenseEvent)="addNewExpense($event)"></app-add-new-expense>
+<app-add-new-income *ngIf="newIncome" (newIncomeEvent)="addNewIncome($event)"
+                    (newSelectedCategory)="addNewIncomeCategory($event)"></app-add-new-income>
+<app-add-new-expense *ngIf="newExpense" (newExpenseEvent)="addNewExpense($event)"
+                     (newSelectedCategory)="addNewExpenseCategory($event)"></app-add-new-expense>

@@ -3,8 +3,9 @@
 }
 
 .material-icons {
+  text-align: center;
   margin-right: 10px;
-  align-content: center;
+  /*align-content: center;*/
 }
 
 /*.income-button {*/

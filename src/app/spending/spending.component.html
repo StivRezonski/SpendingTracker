@@ -1,23 +1,36 @@
-<!--<div class="income">-->
-<!--  <span class="material-icons md-18">attach_money</span>Income {{income}} $-->
-<!--</div>-->
-
-<!--<div class="expense">-->
-<!--  <span class="material-icons md-18">money</span>Expense {{expense}} $-->
-<!--</div>-->
-<!--<div class="expense">-->
+<div class="income">
+<!--  <span class="material-icons md-18">attach_money</span>-->
+  Income {{income}} $
+<!--  <br>-->
+<!--  {{incomeCategory}}-->
 <!--  <span class="material-icons md-18">category</span>-->
-<!--  Category {{category}}-->
-<!--</div>-->
-<mat-list role="list">
-  <mat-list-item role="listitem"><span class="material-icons md-18">attach_money</span>Income {{income}} $</mat-list-item>
-  <mat-list-item role="listitem"><span class="material-icons md-18">money</span>Expense {{expense}} $</mat-list-item>
-  <mat-list-item role="listitem"><span class="material-icons md-18">category</span>Category {{category}}</mat-list-item>
-</mat-list>
+<!--  Category-->
+<!--  {{category}}-->
+</div>
+
+<div class="expense">
+<!--  <span class="material-icons md-18">money</span>-->
+  Expense {{expense}} $
+  <br>
+  <div *ngFor="let item of expenses">{{item}}</div>
+</div>
+
+
+<!--<mat-list class="income">-->
+<!--  <mat-list-item>-->
+<!--  <span class="material-icons md-18">attach_money</span>-->
+<!--      Income {{income}} $-->
+<!--  </mat-list-item>-->
+<!--  <mat-list-item><span class="material-icons md-18">money</span>Expense {{expense}} $</mat-list-item>-->
+<!--  <mat-list-item><span class="material-icons md-18">category</span>Category {{category}}-->
+<!--  </mat-list-item>-->
+<!--</mat-list>-->
+
 <mat-divider></mat-divider>
 <div class="balance" [style.color]="income > expense ? plusBalance : minusBalance">
   <span class="material-icons md-18">paid</span>
-  Balance {{balanceValue}} $</div>
+  Balance {{balanceValue}} $
+</div>
 
 <br>
 
